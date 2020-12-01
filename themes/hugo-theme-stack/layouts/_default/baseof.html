@@ -1,17 +1,30 @@
+<!-- baseof.html 根模板，适用于所有页面 -->
 <!DOCTYPE html>
+
+<!-- 设置页面语言，用于浏览器检测（中文环境下，若设置为英文，浏览器检测到后提示是否自动翻译）
+     在项目根目录 config.toml 文件中可以设置，此处通过变量获取
+-->
 <html lang="{{ .Site.LanguageCode }}">
+
+    <!-- 头部引入 partial head.html 与 可选的 block head -->
     <head>
-        {{- partial "head/head.html" . -}}
+        <!-- 定义页面模板 -->
+        {{- partial "head/head.html" . -}} 
+        <!-- 定义页面 header -->
         {{- block "head" . -}}{{ end }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         <div class="container flex on-phone--column align-items--flex-start {{ if .Site.Params.widgets.enabled }}extended{{ else }}compact{{ end }} {{ block `container-class` . }}{{end}}">
+            <!-- 引入 左侧栏 -->
             {{ partial "sidebar/left.html" . }}
             <main class="main full-width">
+                <!-- 引入可选 定制的 main 内容 -->
                 {{- block "main" . }}{{- end }}
             </main>
+            <!-- 引入可选 右侧栏 -->
             {{- block "right-sidebar" . -}}{{ end }}
         </div>
+        <!-- 引入 底部主题著作权相关 -->
         {{ partial "footer/include.html" . }}
     </body>
 </html>
