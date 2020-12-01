@@ -18,11 +18,21 @@ ul.navigation-bar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:transparent;
+    background-color: transparent;
+}
+
+a.logo {
+    text-align: left;
+}
+
+
+li.logo {
+    position:relative;
+	left:120px;
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
