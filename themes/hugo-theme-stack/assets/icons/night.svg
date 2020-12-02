@@ -1,0 +1,26 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg> -->
+
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="24" height="24" viewBox="0 0 200.000000 200.000000"
+ preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M897 1829 c-273 -31 -519 -206 -643 -454 -65 -131 -86 -223 -86 -375
+0 -152 21 -243 86 -375 106 -214 306 -375 541 -436 112 -29 298 -29 410 0 237
+62 435 221 541 436 53 109 79 207 89 339 7 90 6 99 -9 93 -103 -40 -161 -49
+-269 -45 -133 6 -191 25 -304 100 -78 53 -142 127 -189 220 -70 138 -73 323
+-7 494 6 16 -44 17 -160 3z m-48 -424 c7 -27 35 -97 63 -155 44 -92 62 -116
+142 -196 77 -77 106 -98 186 -138 115 -56 228 -86 326 -86 l73 0 -17 -47 c-32
+-90 -87 -177 -157 -248 -127 -130 -314 -202 -500 -192 -340 18 -604 282 -622
+622 -7 120 14 215 73 335 38 76 61 109 119 165 71 70 158 125 245 156 l45 16
+6 -91 c4 -50 12 -113 18 -141z"/>
+</g>
+</svg>
+

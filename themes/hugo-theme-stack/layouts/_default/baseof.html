@@ -16,15 +16,15 @@
     <body class="{{ block `body-class` . }}{{ end }}">
         <div class="container flex on-phone--column align-items--flex-start {{ if .Site.Params.widgets.enabled }}extended{{ else }}compact{{ end }} {{ block `container-class` . }}{{end}}">
             <!-- 引入 左侧栏 -->
-            {{ partial "sidebar/left.html" . }}
+            <!-- {{ partial "sidebar/left.html" . }} -->
             <main class="main full-width">
                 <!-- 引入可选 定制的 main 内容 -->
                 {{- block "main" . }}{{- end }}
             </main>
             <!-- 引入可选 右侧栏 -->
-            {{- block "right-sidebar" . -}}{{ end }}
+            <!-- {{- block "right-sidebar" . -}}{{ end }} -->
         </div>
         <!-- 引入 底部主题著作权相关 -->
-        {{ partial "footer/include.html" . }}
+        <!-- {{ partial "footer/include.html" . }} -->
     </body>
 </html>

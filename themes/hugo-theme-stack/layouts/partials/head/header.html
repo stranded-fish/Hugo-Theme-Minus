@@ -1,11 +1,46 @@
 <div class="header">
-  <ul class="navigation-bar">
-    <li class="logo" style="float: left"><a href="#logo"> Yulan's Space </a></li>
-    <li><a href="#home"> 首页 </a></li>
+  <!-- <ul class="navigation-bar">
+    <li class="logo">
+      <a href="#logo"> Yulan's Space </a>
+    </li>
+    <li><a href="#home"> {{ partial "helper/icon" "user" }} </a></li>
     <li><a href="#news"> 归档 </a></li>
     <li><a href="#contact"> 友链 </a></li>
     <li><a href="#about"> RSS </a></li>
     <li><a href="#about"> 搜索 </a></li>
     <li><a href="#about"> 夜间 </a></li>
+  </ul> -->
+
+  <!-- 有序列表用作侧边栏菜单 -->
+  <ul class="navigation-bar" id="main-menu">
+
+    <li class="logo">
+      <a href="/"> 
+        {{ partial "helper/icon" "logo" }}
+        <!-- Yulan's Space -->
+       </a>
+    </li>
+
+    <!-- 自定义变量 currentPage，获取当前页面全部内容 . 代表当前页面全部内容 -->
+    {{ $currentPage := . }}
+    <!-- 循环菜单 -->
+    {{ range .Site.Menus.main }}
+    <!-- 定义 active 对象，即当前选定的菜单栏 -->
+    {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+
+    <!-- 如果该菜单的状态为 active 则声明 class 为 current，并进行相关的设置 -->
+    <!-- <li {{ if $active }} class="kkk" {{ end }}> -->
+    <li class="menu" >
+      <!-- 菜单链接 获取当前页面 URL 变量-->
+      <a href="{{ .URL | relURL }}">
+        <!-- 显示图片 -->
+        {{ if .Pre }}
+        {{ partial "helper/icon" .Pre }} {{ end }}
+        <!-- 用于对元素进行组合，即不换行 -->
+        <!-- <span>{{- .Name -}}</span> -->
+      </a>
+    </li>
+
+    {{ end }}
   </ul>
 </div>

@@ -1,48 +1,43 @@
-// TODO
-// 样式总结：
-// 整体：0. 左右分开 1. 左边图标（简笔画，鱼 logo）（点击跳转到主页，在主页时无效） 2. 右边图标形式的菜单栏（简笔画 logo）
-// 颜色：透明 下拉时：磨砂状态：https://blog.spencerwoo.com/2020/08/cpython-implemented-python-time-complexity/
+// TODO  1. 夜间模式跳转 以及 实现
 
-// TODO 
-// 1. 实现左右布局
-// 2. 实现透明与下拉模糊
-// 3. 完成图标收集
-// 4. 实现显示图标
-// 5. 实现跳转
-// 6. 实现个人logo的绘制与替换
-// 7. 初步调整整个布局
+div.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; // 用于设置固定到页面顶端
+    padding-left: 15px; // 设置 左边 填充
+    padding-right: 15px; // 设置 右边 填充
+    backdrop-filter: blur(100px); // 设置半透明程度
+    z-index: 1; // 设置页面优先级，防止被图片挡住
 
+    // 导航栏
+    ul.navigation-bar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        height: 55px;
+        overflow: hidden;
+        background-color: transparent;
 
-ul.navigation-bar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: transparent;
-}
+        // 左上角 个人 logo
+        li.logo {
+            float: left;
 
-a.logo {
-    text-align: left;
-}
+            a {
+                padding-top: 0%;
+            }
+        }
 
+        // 右上角 菜单 menu
+        li.menu {
+            float: right;
+        }
 
-li.logo {
-    position:relative;
-	left:120px;
-}
+        // 导航栏 链接
+        a {
+            display: block;
+            color: black;
+            padding: 14px 16px;
+        }
+    }
 
-li {
-    float: right;
-}
-
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
 }

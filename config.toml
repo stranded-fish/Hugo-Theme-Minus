@@ -64,14 +64,8 @@ DefaultContentLanguage = "en"                   # Theme i18n support
         identifier = "home"
         name = "Home"
         url = "/"
-        weight = -100
+        weight = -60
         pre = "home"
-    [[menu.main]]
-        identifier = "about-cn"
-        name = "About"
-        url = "about"
-        weight = -90
-        pre = "user"
     [[menu.main]]
         identifier = "archives"
         name = "Archives"
@@ -82,8 +76,17 @@ DefaultContentLanguage = "en"                   # Theme i18n support
         identifier = "search"
         name = "Search"
         url = "search"
-        weight = -60
+        weight = -90
         pre = "search"
+    [[menu.main]]
+        identifier = "night-mode" 
+        name = "night-mode"
+        url = "night-mode"
+        weight = -100
+        pre = "night"
+
+    
+   
 
 [related]
     includeNewer = true
