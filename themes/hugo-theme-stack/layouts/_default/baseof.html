@@ -10,10 +10,12 @@
     <head>
         <!-- 定义页面模板 -->
         {{- partial "head/head.html" . -}} 
-        <!-- 定义页面 header -->
-        {{- block "head" . -}}{{ end }}
+        <!-- 定义页面 顶部标题 -->
+        {{- block "top-title" . -}}{{ end }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
+        <!-- TODO 根据页面组件声明不同的类 -->
+        <!-- <p>container flex on-phone--column align-items--flex-start {{ if .Site.Params.widgets.enabled }}extended{{ else }}compact{{ end }} {{ block `container-class` . }}{{end}}</p> -->
         <div class="container flex on-phone--column align-items--flex-start {{ if .Site.Params.widgets.enabled }}extended{{ else }}compact{{ end }} {{ block `container-class` . }}{{end}}">
             <!-- 引入 左侧栏 -->
             <!-- {{ partial "sidebar/left.html" . }} -->
