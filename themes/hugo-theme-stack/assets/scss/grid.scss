@@ -3,6 +3,7 @@
     margin-right: auto;
 
     &.extended {
+        // 手机端 显示的尺寸
         @media (min-width: $on-phone) {
             max-width: 800px;
 
@@ -11,16 +12,18 @@
             }
         }
 
+        // 分屏时 显示的尺寸
         @media (min-width: $on-tablet) {
-            max-width: 972px;
+            max-width: 800px;
 
             .right-sidebar {
                 width: 25%;
             }
         }
 
+        // 普通的屏幕显示的尺寸
         @media (min-width: $on-desktop) {
-            max-width: 1200px;
+            max-width: 900px;
 
             .left-sidebar {
                 width: 20%;
@@ -31,10 +34,11 @@
             }
         }
         
-        // TODO 就是这个地方
+        // TODO 弄懂
+        // 最大的屏幕显示的尺寸
         @media (min-width: $on-desktop-large) {
-            max-width: 1536px;
-
+            // max-width: 1536px;
+            max-width: 900px; 
             .left-sidebar {
                 width: 15%;
             }

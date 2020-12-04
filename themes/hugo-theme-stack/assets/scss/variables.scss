@@ -59,7 +59,8 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
     --card-border-radius: 10px;
 
-    --card-padding: 30px;
+    // TODO 此处设置动态变量用于设置不同界面，卡片不同的填充
+    --card-padding: 20px;
     @media (max-width: $on-desktop-large) {
         --card-padding: 25px;
     }

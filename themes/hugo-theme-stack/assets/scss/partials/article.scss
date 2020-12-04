@@ -21,6 +21,7 @@
             margin-bottom: var(--section-separation);
         }
 
+        // 卡片图片
         .article-image {
             img {
                 width: 100%;
@@ -48,11 +49,13 @@
     }
 }
 
+// 卡片文字描述
 .article-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+    // 调用 variable.scss 文件中 定义的变量，动态设置 填充
     padding: var(--card-padding);
 }
 
