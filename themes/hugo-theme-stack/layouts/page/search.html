@@ -24,8 +24,10 @@
 </script>
 
 {{- $opts := dict "minify" hugo.IsProduction "JSXFactory" "createElement" -}}
+<p>{{$opts}}</p>
 {{- $searchScript := resources.Get "ts/search.tsx" | js.Build $opts -}}
+<p>{{$searchScript }}</p>
 <script type="text/javascript" src="{{ $searchScript.RelPermalink }}" defer></script>
-
+<p>{{$searchScript.RelPermalink}}</p>
 {{ partialCached "footer/footer" . }}
 {{ end }}
