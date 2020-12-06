@@ -5,6 +5,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global style
 */
 :root {
+    // 没有指定媒体类型，媒体查询默认会被设为应用全部媒体类型
     @media (min-width: $on-phone + 1) {
         --main-top-padding: 35px;
     }
@@ -14,7 +15,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     }
 
 
-    --body-background: #fafafa;
+    --body-background: #fafafa; // 整体背景颜色
 
     --accent-color: #34495e;
     --accent-color-darker: #2c3e50;
@@ -23,7 +24,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
     --tag-border-radius: 4px;
 
-    --section-separation: 40px;
+    --section-separation: 40px;// 主页卡片间隔
 
     @media (prefers-color-scheme: dark) {
         --body-background: #303030;

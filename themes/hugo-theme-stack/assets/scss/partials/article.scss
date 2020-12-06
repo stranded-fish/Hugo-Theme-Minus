@@ -1,4 +1,4 @@
-/* Default article style */
+/* Default article card style */
 .article-list {
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
         transition: box-shadow 0.3s ease;
 
         &:hover {
-            box-shadow: var(--shadow-l2);
+            box-shadow: var(--shadow-l4);
         }
 
         &:not(:last-of-type) {
@@ -25,27 +25,28 @@
         .article-image {
             img {
                 width: 100%;
-                height: 200px;
+                height: 300px;
                 object-fit: cover;
 
                 @media (max-width: $on-tablet) {
-                    height: 150px;
+                    height: 280px;
                 }
 
                 @media (min-width: $on-desktop-large) {
-                    height: 250px;
+                    height: 340px;
                 }
             }
         }
 
-        @for $i from 1 through length($defaultTagBackgrounds) {
-            &:nth-child(#{length($defaultTagBackgrounds)}n + #{$i}) {
-                .article-category a {
-                    background: nth($defaultTagBackgrounds, $i);
-                    color: nth($defaultTagColors, $i);
-                }
-            }
-        }
+        // TODO 分类标签，颜色变换 暂时用不上
+        // @for $i from 1 through length($defaultTagBackgrounds) {
+        //     &:nth-child(#{length($defaultTagBackgrounds)}n + #{$i}) {
+        //         .article-category a {
+        //             background: nth($defaultTagBackgrounds, $i);
+        //             color: nth($defaultTagColors, $i);
+        //         }
+        //     }
+        // }
     }
 }
 
