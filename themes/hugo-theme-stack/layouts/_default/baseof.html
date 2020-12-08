@@ -26,7 +26,10 @@
             <!-- 引入可选 右侧栏 -->
             <!-- {{- block "right-sidebar" . -}}{{ end }} -->
         </div>
+        
+        {{ partial "widget/back-to-top.html"}}
+
         <!-- 引入 底部主题著作权相关 -->
-        <!-- {{ partial "footer/include.html" . }} -->
+        {{ partial "footer/include.html" . }}
     </body>
 </html>
