@@ -28,11 +28,12 @@
         </a>
     </h2>
 
-    {{ with .Params.description }}
+    <!-- 暂时去掉副标题 -->
+    <!-- {{ with .Params.description }}
     <h3 class="article-subtitle">
         {{ . }}
     </h3>
-    {{ end }}
+    {{ end }} -->
 
     {{- if not .Date.IsZero -}}
     <footer class="article-time">

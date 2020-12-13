@@ -1,8 +1,8 @@
+<!-- TODO -->
 <!-- 文章界面 html  -->
 <!-- 通过读取 Param.image 参数判断当前页面是否有图片，以调用不同的css布局 -->
+{{ partial "article/components/header" . }}
 <article class="{{ if .Params.image }}has-image {{ end }}main-article">
-    {{ partial "article/components/header" . }}
-
     {{ partial "article/components/content" . }}
 
     {{ partial "article/components/footer" . }}
