@@ -11,6 +11,7 @@ DefaultContentLanguage = "en"                   # Theme i18n support
     page = "/:slug/"
     
 [params]
+    toc = true # 启用目录
     mainSections = ["post"]
     featuredImageField = "image"
     rssFullContent = true

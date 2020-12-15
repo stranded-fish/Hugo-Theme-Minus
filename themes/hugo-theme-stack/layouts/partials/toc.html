@@ -1,0 +1,74 @@
+<!-- toc.html -->
+<!-- ignore empty links with + -->
+{{ $headers := findRE "<h[1-4].*?>(.|\n])+?</h[1-4]>" .Content }}
+<!-- at least one header to link to -->
+{{ if ge (len $headers) 1 }}
+{{ $h1_n := len (findRE "(.|\n])+?" .Content) }}
+{{ $re := (cond (eq $h1_n 0) "<h[2-4]" "<h[1-4]") }}
+{{ $renum := (cond (eq $h1_n 0) "[2-4]" "[1-4]") }}
+
+<!--Scrollspy-->
+<div id = "flexibleToc" class="toc">
+
+    <div class="page-header"><strong>- CATALOG -</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        {{ range $headers }}
+            {{ $header := . }}
+                {{ range first 1 (findRE $re $header 1) }}
+                    {{ range findRE $renum . 1 }}
+                    {{ $next_heading := (cond (eq $h1_n 0) (sub (int .) 1 ) (int . ) ) }}
+                        {{ range seq $next_heading }}
+                           <ul class="nav">
+                        {{end}}
+                        {{ $anchorId := (replaceRE ".* id=\"(.*?)\".*" "$1" $header ) }}
+                            <li class="nav-item">
+                                <a class="nav-link text-left" href="#{{ $anchorId }}">
+                                {{ $header | plainify | htmlUnescape }}
+                                </a>
+                            </li>
+                        <!-- close list -->
+                        {{ range seq $next_heading }}
+                            </ul>
+                        {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+    </div>
+
+</div>
+<!--Scrollspy-->
+
+<script src="https://lib.baomitu.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(document).ready(
+        function(){
+            var oDiv = document.getElementById("flexibleToc"),
+            
+            H = 0,
+                Y = oDiv
+            while (Y) {
+                H += Y.offsetTop; 
+                Y = Y.offsetParent;
+            }
+            window.onscroll = function()
+            {
+                var s = document.body.scrollTop || document.documentElement.scrollTop
+                if(s>H) {
+                    oDiv.style = "position:sticky;top:0;"
+                } else {
+                    oDiv.style = ""
+                }
+            }
+        }
+    );
+</script>
+
+
+
+
+
+
+{{ end }}

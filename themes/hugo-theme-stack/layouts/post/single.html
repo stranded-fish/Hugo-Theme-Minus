@@ -7,10 +7,17 @@
         </a>
     </div>
 
-    {{ partial "article/article.html" . }}
+    <div class="post-content">
+        <!-- 应用目录 -->
+        {{ if .Site.Params.toc | default false }}
+            {{ partial "toc" . }}
+        {{ end }}
 
-    {{ partial "article/components/related-contents" . }}
+        {{ partial "article/article.html" . }}
 
+        {{ partial "article/components/related-contents" . }}
+    </div>
+    
     {{ if or (not (isset .Params "comments")) (eq .Params.comments "true")}}
         {{ partial "comments/include" . }}
     {{ end }}
