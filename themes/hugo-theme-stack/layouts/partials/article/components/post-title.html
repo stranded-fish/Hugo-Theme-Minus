@@ -22,21 +22,21 @@
     </header>
     {{ end }}
 
-    <h2 id = "details-article-title" class="article-title">
+    <h2 id = "post-article-title" class="article-title">
         <a href="{{ .RelPermalink }}">
             {{- .Title -}}
         </a>
     </h2>
 
     <!-- 暂时去掉副标题 -->
-    {{ with .Params.description }}
+    <!-- {{ with .Params.description }}
     <h3 id = "details-article-subtitle" class="article-subtitle">
         {{ . }}
     </h3>
-    {{ end }}
+    {{ end }} -->
 
     {{- if not .Date.IsZero -}}
-    <footer class="article-time">
+    <footer id = "post-article-time" class="article-time">
         {{ partial "helper/icon" "clock" }}
         <time class="article-time--published">
             {{- .Date.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}

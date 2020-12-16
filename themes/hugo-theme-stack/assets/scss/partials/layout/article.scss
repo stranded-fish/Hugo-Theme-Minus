@@ -8,12 +8,35 @@
 
 .article-details {
 
+    @media (min-width: $on-desktop-large) {
+        font-size: 2.4rem;
+    }
+    #post-article-time {
+        justify-content: center;
+    }
+
     .article-time{
-        align-self: left;
         margin: 8px 0px 0px 0px;
         .article-time--published {
             font-size: 15px;
         }
+    }
+    #details-article-title {
+        text-align: left;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    #details-article-subtitle{
+        text-align: left;
+        font-size: 14px;
+        margin: 8px 0px 0px 0px;
+    }
+
+    #post-article-title{
+        text-align: center;
+        font-size: 32px;
+        margin: 0;
     }
     
     .article-title {
@@ -22,7 +45,7 @@
         margin: 0;
     }
     .article-subtitle{
-        text-align: center;
+        text-align: left;
         font-size: 14px;
         margin: 8px 0px 0px 0px;
     }
